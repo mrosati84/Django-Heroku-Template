@@ -3,6 +3,8 @@
 import os
 PROJECT_DIR = os.path.abspath(os.path.dirname(__file__))
 
+DATABASES = {}
+
 if os.getenv('ENV') == 'prod':
     # import production settings from heroku
     from herokudjango.prodsettings import *
