@@ -59,6 +59,18 @@ STATICFILES_DIRS = (
     # Don't forget to use absolute paths, not relative paths.
 )
 
+#############################################################
+# AMAZON S3 CONFIGURATION
+DEFAULT_FILE_STORAGE = 'libs.storages.S3Storage.S3Storage'
+AWS_ACCESS_KEY_ID = 'AKIAIRYTN2LUPJIZ63YQ'
+AWS_SECRET_ACCESS_KEY = 'vNQkZ0xz9GDmbcO3Xk/74dIqbnV4wFezP9Nof7oZ'
+AWS_STORAGE_BUCKET_NAME = 'herokudjango'
+
+# To allow django-admin.py collectstatic to automatically put your static files in your bucket
+STATICFILES_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
+# END AMAZON S3 CONFIGURATION
+#############################################################
+
 # List of finder classes that know how to find static files in
 # various locations.
 STATICFILES_FINDERS = (
@@ -104,6 +116,7 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     # Uncomment the next line to enable the admin:
     'django.contrib.admin',
+    'storages',
     # Uncomment the next line to enable admin documentation:
     # 'django.contrib.admindocs',
 )
