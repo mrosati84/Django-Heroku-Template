@@ -12,3 +12,6 @@ herokudjango/static
 
 # Local settings file
 localsettings.py
+
+# Pycharm folders
+.idea
