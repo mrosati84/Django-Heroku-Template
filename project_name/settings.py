@@ -1,14 +1,14 @@
-# Django settings for herokudjango project.
+# Django settings for {{ project_name }} project.
 
 import os
 PROJECT_DIR = os.path.abspath(os.path.dirname(__file__))
 
 if os.getenv('ENV') == 'prod':
     # import production settings from heroku
-    from herokudjango.prodsettings import *
+    from {{ project_name }}.prodsettings import *
 else:
     # import local settings
-    from herokudjango.localsettings import *
+    from {{ project_name }}.localsettings import *
 
 SITE_ID = 1
 
@@ -31,9 +31,9 @@ STATICFILES_DIRS = ()
 
 #############################################################
 # AMAZON S3 CONFIGURATION
-AWS_ACCESS_KEY_ID = 'AKIAIRYTN2LUPJIZ63YQ'
-AWS_SECRET_ACCESS_KEY = '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'
-AWS_STORAGE_BUCKET_NAME = 'herokudjango'
+AWS_ACCESS_KEY_ID = ''
+AWS_SECRET_ACCESS_KEY = ''
+AWS_STORAGE_BUCKET_NAME = '{{ project_name }}'
 
 DEFAULT_FILE_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
 STATICFILES_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
@@ -59,9 +59,9 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.messages.middleware.MessageMiddleware',
 )
 
-ROOT_URLCONF = 'herokudjango.urls'
+ROOT_URLCONF = '{{ project_name }}.urls'
 
-WSGI_APPLICATION = 'herokudjango.wsgi.application'
+WSGI_APPLICATION = '{{ project_name }}.wsgi.application'
 
 TEMPLATE_DIRS = ()
 

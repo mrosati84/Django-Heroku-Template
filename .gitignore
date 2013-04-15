@@ -8,7 +8,7 @@ venv
 *.db
 
 # Ignore collected static files
-herokudjango/static
+{{ project_name }}/static
 
 # Local settings file
 localsettings.py
